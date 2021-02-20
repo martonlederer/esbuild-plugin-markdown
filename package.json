@@ -1,0 +1,43 @@
+{
+  "name": "esbuild-plugin-markdown",
+  "version": "0.0.1",
+  "description": "Import markdown files with esbuild",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/martonlederer/esbuild-plugin-markdown",
+  "author": "Marton Lederer <marton@lederer.hu>",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production node build.js && tsc --emitDeclarationOnly",
+    "dev": "NODE_ENV=development node build.js",
+    "test": "yarn build && cd test && mocha 'index.js' --no-timeout --exit",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check ."
+  },
+  "gitHooks": {
+    "pre-commit": "prettier --write . && git add -A"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "fs-extra": "^9.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/fs-extra": "^9.0.7",
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^14.14.31",
+    "chai": "^4.3.0",
+    "esbuild": "^0.8.49",
+    "mocha": "^8.3.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.5",
+    "yorkie": "^2.0.0"
+  }
+}
