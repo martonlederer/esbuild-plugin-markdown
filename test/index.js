@@ -11,6 +11,24 @@ describe("Markdown esbuild tests", () => {
       })
       .catch(done);
   });
+  it("Applies marked.MarkedOptions", (done) => {
+    test("options", {
+      markedOptions: {
+        highlight(code, language) {
+          const hljs = require("highlight.js");
+          const validLanguage = hljs.getLanguage(language)
+            ? language
+            : "plaintext";
+          return hljs.highlight(validLanguage, code).value;
+        }
+      }
+    })
+      .then((res) => {
+        assert(res);
+        done();
+      })
+      .catch(done);
+  });
 });
 
 function test(test, options) {

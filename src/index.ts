@@ -2,9 +2,11 @@ import { Plugin } from "esbuild";
 import { TextDecoder } from "util";
 import path from "path";
 import fs from "fs-extra";
-import marked from "marked";
+import marked, { MarkedOptions } from "marked";
 
-interface MarkdownPluginOptions {}
+interface MarkdownPluginOptions {
+  markedOptions?: MarkedOptions;
+}
 
 export const markdownPlugin = (options: MarkdownPluginOptions): Plugin => ({
   name: "markdown",
@@ -26,7 +28,7 @@ export const markdownPlugin = (options: MarkdownPluginOptions): Plugin => ({
       const markdownContent = new TextDecoder().decode(
           await fs.readFile(args.path)
         ),
-        markdownHTML = marked(markdownContent);
+        markdownHTML = marked(markdownContent, options?.markedOptions);
 
       return {
         contents: JSON.stringify({
