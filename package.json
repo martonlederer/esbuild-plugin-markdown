@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-markdown",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Import markdown files with esbuild",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
