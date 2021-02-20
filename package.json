@@ -26,11 +26,13 @@
     "dist"
   ],
   "dependencies": {
-    "fs-extra": "^9.1.0"
+    "fs-extra": "^9.1.0",
+    "marked": "^2.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.15",
     "@types/fs-extra": "^9.0.7",
+    "@types/marked": "^1.2.2",
     "@types/mocha": "^8.2.1",
     "@types/node": "^14.14.31",
     "chai": "^4.3.0",
