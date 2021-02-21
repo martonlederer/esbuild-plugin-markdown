@@ -31,6 +31,15 @@ esbuild.build({
 });
 ```
 
+```ts
+import markdownFile from "../assets/example.md";
+// markdownFile: {
+//  html: parsed markdown (with "marked")
+//  raw: raw markdown file
+//  filename: imported file's absolute path
+// }
+```
+
 ## Options
 
 You can add your own custom configuration of options to `esbuild-plugin-markdown`:
