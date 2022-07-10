@@ -26,7 +26,6 @@
     "dist"
   ],
   "dependencies": {
-    "fs-extra": "^9.1.0",
     "highlight.js": "^10.6.0",
     "marked": "^2.0.0"
   },

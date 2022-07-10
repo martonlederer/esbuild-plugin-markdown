@@ -1,7 +1,7 @@
 import { Plugin } from "esbuild";
 import { TextDecoder } from "util";
 import path from "path";
-import fs from "fs-extra";
+import { readFile } from "fs/promises";
 import marked, { MarkedOptions } from "marked";
 
 interface MarkdownPluginOptions {
@@ -26,7 +26,7 @@ export const markdownPlugin = (options: MarkdownPluginOptions): Plugin => ({
     // load files with "markdown" namespace
     build.onLoad({ filter: /.*/, namespace: "markdown" }, async (args) => {
       const markdownContent = new TextDecoder().decode(
-          await fs.readFile(args.path)
+          await readFile(args.path)
         ),
         markdownHTML = marked(markdownContent, options?.markedOptions);
 
