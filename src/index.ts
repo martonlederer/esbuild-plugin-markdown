@@ -2,7 +2,7 @@ import { Plugin } from "esbuild";
 import { TextDecoder } from "util";
 import path from "path";
 import { readFile } from "fs/promises";
-import marked, { MarkedOptions } from "marked";
+import { MarkedOptions, parse } from "marked";
 
 interface MarkdownPluginOptions {
   markedOptions?: MarkedOptions;
@@ -28,7 +28,7 @@ export const markdownPlugin = (options: MarkdownPluginOptions): Plugin => ({
       const markdownContent = new TextDecoder().decode(
           await readFile(args.path)
         ),
-        markdownHTML = marked(markdownContent, options?.markedOptions);
+        markdownHTML = parse(markdownContent, options?.markedOptions);
 
       return {
         contents: JSON.stringify({

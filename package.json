@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "highlight.js": "^10.6.0",
-    "marked": "^2.0.0"
+    "marked": "^4.0.17"
   },
   "devDependencies": {
     "@types/chai": "^4.2.15",
