@@ -26,21 +26,28 @@
     "dist"
   ],
   "dependencies": {
-    "fs-extra": "^9.1.0",
-    "highlight.js": "^10.6.0",
-    "marked": "^2.0.0"
+    "marked": "^4.0.17"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.15",
-    "@types/fs-extra": "^9.0.7",
-    "@types/marked": "^1.2.2",
-    "@types/mocha": "^8.2.1",
-    "@types/node": "^14.14.31",
-    "chai": "^4.3.0",
-    "esbuild": "^0.8.49",
-    "mocha": "^8.3.0",
-    "prettier": "^2.2.1",
-    "typescript": "^4.1.5",
+    "@types/chai": "^4.3.1",
+    "@types/marked": "^4.0.3",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.0.3",
+    "chai": "^4.3.6",
+    "esbuild": "^0.14.48",
+    "highlight.js": "^11.5.1",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
     "yorkie": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "resolutions": {
+    "ansi-regex": "^5.0.1"
+  },
+  "overrides": {
+    "ansi-regex": "^5.0.1"
   }
 }
